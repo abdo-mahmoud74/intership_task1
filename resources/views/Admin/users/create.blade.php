@@ -11,15 +11,7 @@
                 </div>
 
                 <div class="card-body">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                  
 
                     @if (session('success'))
                         <div class="alert alert-success">
@@ -37,7 +29,7 @@
                                     <i class="fas fa-user"></i> Name <span class="text-danger">*</span>
                                 </label>
                                 <input type="text" 
-                                       class="form-control @error('name') is-invalid @enderror" 
+                                       class="form-control" 
                                        id="name" 
                                        name="name" 
                                        value="{{ old('name') }}" 
@@ -54,7 +46,7 @@
                                     <i class="fas fa-envelope"></i> Email <span class="text-danger">*</span>
                                 </label>
                                 <input type="email" 
-                                       class="form-control @error('email') is-invalid @enderror" 
+                                       class="form-control " 
                                        id="email" 
                                        name="email" 
                                        value="{{ old('email') }}" 
@@ -72,7 +64,7 @@
                                 </label>
                                 <div class="input-group">
                                     <input type="password" 
-                                           class="form-control @error('password') is-invalid @enderror" 
+                                           class="form-control " 
                                            id="password" 
                                            name="password" 
                                            placeholder="••••••••"
@@ -105,7 +97,7 @@
                                 <label for="role" class="form-label">
                                     <i class="fas fa-user-shield"></i> Role <span class="text-danger">*</span>
                                 </label>
-                                <select class="form-select @error('role') is-invalid @enderror" 
+                                <select class="form-select " 
                                         id="role" 
                                         name="role" 
                                         required>
@@ -127,7 +119,7 @@
                                 <label for="status" class="form-label">
                                     <i class="fas fa-toggle-on"></i> Status <span class="text-danger">*</span>
                                 </label>
-                                <select class="form-select @error('status') is-invalid @enderror" 
+                                <select class="form-select " 
                                         id="status" 
                                         name="status" 
                                         required>
