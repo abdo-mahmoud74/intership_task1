@@ -36,11 +36,11 @@ class UserController extends Controller
             'status' => 'required|in:active,blocked',
         ]);
         User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>bcrypt($request->password),
-            'role'=>$request->role,
-            'status'=>$request->status,
+        'name' => $validated['name'],
+        'email' => $validated['email'],
+        'password' => Hash::make($validated['password']),
+        'role' => $validated['role'],
+        'status' => $validated['status'],
 
         ]);
         return redirect()->route('admin.users')->with('success','User created successfully');

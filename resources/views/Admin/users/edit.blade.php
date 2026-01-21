@@ -23,7 +23,7 @@
                             @csrf
 
                             <div class="row">
-                                <!-- الاسم -->
+                                <!-- name -->
                                 <div class="col-md-6 mb-3">
                                     <label for="name" class="form-label">
                                         <i class="fas fa-user"></i> Name <span class="text-danger">*</span>
@@ -32,11 +32,11 @@
                                         id="name" name="name" value="{{ $user->name }}"
                                         placeholder="Enter user name" required>
                                     @error('name')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
                                 </div>
 
-                                <!-- البريد الإلكتروني -->
+                                <!-- Email  -->
                                 <div class="col-md-6 mb-3">
                                     <label for="email" class="form-label">
                                         <i class="fas fa-envelope"></i> Email <span class="text-danger">*</span>
@@ -45,11 +45,11 @@
                                         id="email" name="email" value="{{ $user->email }}"
                                         placeholder="example@email.com" required>
                                     @error('email')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
                                 </div>
 
-                                <!-- كلمة المرور -->
+                                <!--  pass -->
                                 <div class="col-md-6 mb-3">
                                     <label for="password" class="form-label">
                                         <i class="fas fa-lock"></i> Password <span class="text-danger">*</span>
@@ -67,7 +67,7 @@
                                     <small class="text-muted"> must be larger than 8 characters </small>
                                 </div>
 
-                                <!-- تأكيد كلمة المرور -->
+                                <!--  pass confirm -->
                                 <div class="col-md-6 mb-3">
                                     <label for="password_confirmation" class="form-label">
                                         <i class="fas fa-lock"></i> Confirm Password <span class="text-danger">*</span>
@@ -101,11 +101,11 @@
                                         @endif    
                                     </select>
                                     @error('role')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
                                 </div>
 
-                                <!-- الحالة (Status) -->
+                                <!--  (Status) -->
                                 <div class="col-md-6 mb-3">
                                     <label for="status" class="form-label">
                                         <i class="fas fa-toggle-on"></i> Status <span class="text-danger">*</span>
@@ -131,7 +131,7 @@
 
                                     </select>
                                     @error('status')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>

@@ -11,7 +11,17 @@
                 </div>
 
                 <div class="card-body">
-                  
+                     {{-- @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong><i class="fas fa-exclamation-triangle"></i> Error</strong>
+                            <ul class="mb-0 mt-2">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                   --}}
 
                     @if (session('success'))
                         <div class="alert alert-success">
@@ -34,9 +44,9 @@
                                        name="name" 
                                        value="{{ old('name') }}" 
                                        placeholder="Enter user name"
-                                       required>
+                                       >
                                 @error('name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -51,9 +61,9 @@
                                        name="email" 
                                        value="{{ old('email') }}" 
                                        placeholder="example@email.com"
-                                       required>
+                                       >
                                 @error('email')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -68,7 +78,7 @@
                                            id="password" 
                                            name="password" 
                                            placeholder="••••••••"
-                                           required>
+                                           >
                                     <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                                         <i class="fas fa-eye" id="eyeIcon"></i>
                                     </button>
@@ -89,7 +99,7 @@
                                        id="password_confirmation" 
                                        name="password_confirmation" 
                                        placeholder="••••••••"
-                                       required>
+                                       >
                             </div>
 
                             <!-- الصلاحية (Role) -->
@@ -100,7 +110,7 @@
                                 <select class="form-select " 
                                         id="role" 
                                         name="role" 
-                                        required>
+                                        >
                                     <option value="">Choose Role</option>
                                     <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>
                                         <i class="fas fa-crown"></i> Admin 
@@ -110,7 +120,7 @@
                                     </option>
                                 </select>
                                 @error('role')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback  d-block">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -122,7 +132,7 @@
                                 <select class="form-select " 
                                         id="status" 
                                         name="status" 
-                                        required>
+                                       >
                                     <option value="">Choose Status</option>
                                     <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>
                                         <i class="fas fa-check-circle"></i> Active 
@@ -132,7 +142,7 @@
                                     </option>
                                 </select>
                                 @error('status')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -248,6 +258,7 @@ document.getElementById('togglePassword').addEventListener('click', function() {
         eyeIcon.classList.add('fa-eye');
     }
 });
+
 </script>
 @endpush
 
